@@ -15,3 +15,6 @@ class TeaLogSerializer(serializers.ModelSerializer):
         model = TeaLogs
         fields = ('id', 'tea', 'tea_id', 'feeling', 'comment', 'created_at')
         read_only_fields = ('id', 'tea', 'created_at')
+
+    def create(self, validated_data):
+        return TeaLogs.objects.create(**validated_data)
