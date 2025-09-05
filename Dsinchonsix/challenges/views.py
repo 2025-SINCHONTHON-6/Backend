@@ -1,7 +1,8 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
-
-from .models import Challenge
+from .serializers import *
+from .models import *
+from rest_framework import status
 from .checkers import CHALLENGE_CHECKERS
 
 # 챌린지별 목표치를 코드로 정의
@@ -39,3 +40,11 @@ class ChallengeStatusView(APIView):
             })
             
         return Response(response_data)
+
+class TeaLogCreateView(APIView):
+    def post(self, request, *args, **kwargs):
+        serializer = TeaLogSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

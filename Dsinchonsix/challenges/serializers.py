@@ -1,5 +1,6 @@
 from rest_framework import serializers
-from .models import Challenge
+from .models import *
+from teas.models import Tea
 
 class ChallengeSerializer(serializers.ModelSerializer):
     # 뷰(View)에서 동적으로 추가해줄 필드들을 미리 정의
@@ -18,3 +19,18 @@ class ChallengeSerializer(serializers.ModelSerializer):
             'current_progress',
             'is_completed',
         ]
+
+
+class TeaSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Tea
+        fields = ('id', 'name')
+
+class TeaLogSerializer(serializers.ModelSerializer):
+    tea = TeaSerializer(read_only=True)
+    tea_id = serializers.PrimaryKeyRelatedField(queryset=Tea.objects.all(), write_only=True, source='tea')
+
+    class Meta:
+        model = TeaLogs
+        fields = ('id', 'tea', 'tea_id', 'feeling', 'comment', 'created_at')
+        read_only_fields = ('id', 'tea', 'created_at')
