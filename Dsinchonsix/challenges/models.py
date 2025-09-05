@@ -21,22 +21,6 @@ class Challenge(models.Model):
     def __str__(self):
         return self.title
 
-class UserChallenge(models.Model):
-    user = models.ForeignKey(
-        settings.AUTH_USER_MODEL, 
-        on_delete=models.CASCADE, 
-        related_name='challenges'
-    )
-    challenge = models.ForeignKey(Challenge, on_delete=models.CASCADE)
-    is_completed = models.BooleanField(default=False, verbose_name="완료 여부")
-    completed_at = models.DateTimeField(null=True, blank=True, verbose_name="완료일")
-
-    class Meta:
-        unique_together = ('user', 'challenge')
-
-    def __str__(self):
-        return f"{self.user.username} - {self.challenge.title} ({'완료' if self.is_completed else '진행중'})"
-
 class TeaLogs(models.Model):
     id = models.BigAutoField(primary_key=True)
     tea_id = models.ForeignKey('teas.Tea', on_delete=models.CASCADE, null=False, verbose_name="차 아이디")
