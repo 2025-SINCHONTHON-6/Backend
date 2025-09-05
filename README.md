@@ -74,7 +74,9 @@ Python 3.9+
 
 pip
 
+```
 🚀 설치 & 로컬 실행
+
 가상환경 생성 및 활성화
 python -m venv venv
 source venv/bin/activate
@@ -92,6 +94,7 @@ python manage.py loaddata challenges/data/challenges_challenge.json
 
 개발 서버 실행
 python manage.py runserver
+```
 
 🔑 API 엔드포인트 개요
 GET /recommendations/filter/mood?mood={mood}: 기분에 맞는 맛 필터링 데이터 조회
