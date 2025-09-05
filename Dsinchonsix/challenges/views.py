@@ -1,7 +1,9 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
-
+from .serializers import *
+from .models import *
+from rest_framework import status
 from .models import Challenge, UserChallenge
 from .checkers import CHALLENGE_CHECKERS
 
@@ -41,3 +43,11 @@ class ChallengeStatusView(APIView):
             })
             
         return Response(response_data)
+
+class TeaLogCreateView(APIView):
+    def post(self, request, *args, **kwargs):
+        serializer = TeaLogSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
