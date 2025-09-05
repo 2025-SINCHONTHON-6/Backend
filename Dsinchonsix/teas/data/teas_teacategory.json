@@ -1,0 +1,50 @@
+[
+  {
+    "model": "teas.teacategory",
+    "pk": 1,
+    "fields": {
+      "name": "녹차",
+      "mood": "슬픔"
+    }
+  },
+  {
+    "model": "teas.teacategory",
+    "pk": 2,
+    "fields": {
+      "name": "백차",
+      "mood": "화남"
+    }
+  },
+  {
+    "model": "teas.teacategory",
+    "pk": 3,
+    "fields": {
+      "name": "황차",
+      "mood": "편안함"
+    }
+  },
+  {
+    "model": "teas.teacategory",
+    "pk": 4,
+    "fields": {
+      "name": "청차",
+      "mood": "기쁨"
+    }
+  },
+  {
+    "model": "teas.teacategory",
+    "pk": 5,
+    "fields": {
+      "name": "홍차",
+      "mood": "피곤함"
+    }
+  },
+  {
+    "model": "teas.teacategory",
+    "pk": 6,
+    "fields": {
+      "name": "흑차",
+      "mood": "괴로움"
+    }
+  }
+]
