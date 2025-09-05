@@ -19,12 +19,15 @@ Database : SQLite3
 
 Deploy : PythonAnywhere
 
+```
 👥 팀원 소개
 이름   역할
 황규리  BE
 설영은  BE
 고선태  BE
+```
 
+```
 🗂 폴더 구조
 Backend/                   # Git Repository Root
 └── Dsichonsix/            # Django Project Root
@@ -62,6 +65,7 @@ Backend/                   # Git Repository Root
     ├── manage.py
     ├── README.md
     └── requirements.txt
+```
 
 🚀 실행 방법
 요구 사항
