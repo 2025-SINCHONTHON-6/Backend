@@ -75,22 +75,22 @@ Python 3.9+
 pip
 
 🚀 설치 & 로컬 실행
-# 가상환경 생성 및 활성화
+가상환경 생성 및 활성화
 python -m venv venv
 source venv/bin/activate
 
-# 패키지 설치
+패키지 설치
 pip install -r requirements.txt
 
-# 데이터베이스 초기화
+데이터베이스 초기화
 python manage.py migrate
 
-# (선택) 초기 데이터 로드
+초기 데이터 로드
 python manage.py loaddata teas/data/teas_teacategory.json
 python manage.py loaddata teas/data/teas_tea.json
 python manage.py loaddata challenges/data/challenges_challenge.json
 
-# 개발 서버 실행
+개발 서버 실행
 python manage.py runserver
 
 🔑 API 엔드포인트 개요
@@ -110,7 +110,6 @@ GET /challenges/logs/dates/: 전체 기록 날짜 조회
 
 GET /challenges/records/daily?created_at=YYYY-MM-DD: 특정 날짜의 나의 차 기록 조회
 
-네, 제공해주신 모든 모델 코드를 반영하여 README.md 파일의 데이터 모델 파트를 완성해 드릴게요.
 
 💾 데이터 모델
 teas app
