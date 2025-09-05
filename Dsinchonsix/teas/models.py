@@ -17,6 +17,7 @@ class Tea(models.Model):
     description = models.TextField(null=False, verbose_name="차 설명")
     tea_category = models.ForeignKey(TeaCategory, on_delete=models.CASCADE, null=False, verbose_name="카테고리 종류")
     taste = models.CharField(max_length=30, null=False, verbose_name="차 맛")
+    taste_id = models.IntegerField(unique=True, default=0) #url용 넘버링 
 
     def __str__(self):
         return self.name
