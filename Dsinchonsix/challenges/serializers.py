@@ -24,7 +24,7 @@ class ChallengeSerializer(serializers.ModelSerializer):
 class TeaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Tea
-        fields = ('id', 'name')
+        fields = ('id', 'name', 'description')
 
 class TeaLogSerializer(serializers.ModelSerializer):
     tea = TeaSerializer(read_only=True)
@@ -34,3 +34,6 @@ class TeaLogSerializer(serializers.ModelSerializer):
         model = TeaLogs
         fields = ('id', 'tea', 'tea_id', 'feeling', 'comment', 'created_at')
         read_only_fields = ('id', 'tea', 'created_at')
+
+    def create(self, validated_data):
+        return TeaLogs.objects.create(**validated_data)
