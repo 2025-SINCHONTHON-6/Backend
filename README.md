@@ -19,16 +19,16 @@ Database : SQLite3
 
 Deploy : PythonAnywhere
 
-```
 👥 팀원 소개
+```
 이름   역할
 황규리  BE
 설영은  BE
 고선태  BE
 ```
 
-```
 🗂 폴더 구조
+```
 Backend/                   # Git Repository Root
 └── Dsichonsix/            # Django Project Root
     ├── shinchonsix/      # 메인 프로젝트 
@@ -74,9 +74,9 @@ Python 3.9+
 
 pip
 
-```
-🚀 설치 & 로컬 실행
 
+🚀 설치 & 로컬 실행
+```
 가상환경 생성 및 활성화
 python -m venv venv
 source venv/bin/activate
