@@ -1,0 +1,38 @@
+[
+  {
+    "model": "challenges.challenge",
+    "pk": 1,
+    "fields": {
+      "title": "추천 차 5번 마셔보기!",
+      "description": "가이드에 따라 추천받은 차를 5번 마시면 달성할 수 있어요.",
+      "challenge_type": "DRINK_COUNT"
+    }
+  },
+  {
+    "model": "challenges.challenge",
+    "pk": 2,
+    "fields": {
+      "title": "기록 10번 해보기!",
+      "description": "차를 마시고 느낀 점을 10번 기록해보세요.",
+      "challenge_type": "RECORD_COUNT"
+    }
+  },
+  {
+    "model": "challenges.challenge",
+    "pk": 3,
+    "fields": {
+      "title": "차 탐험가! (5종류)",
+      "description": "서로 다른 종류의 차를 5종류 이상 마셔보세요.",
+      "challenge_type": "UNIQUE_TEA_COUNT"
+    }
+  },
+  {
+    "model": "challenges.challenge",
+    "pk": 4,
+    "fields": {
+      "title": "연속 3일! 차 마시기",
+      "description": "꾸준함이 중요해요. 3일 연속으로 차를 마셔보세요.",
+      "challenge_type": "CONSECUTIVE_DAYS"
+    }
+  }
+]
