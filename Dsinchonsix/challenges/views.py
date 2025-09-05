@@ -4,6 +4,7 @@ from .serializers import *
 from .models import *
 from rest_framework import status
 from .checkers import CHALLENGE_CHECKERS
+from rest_framework.response import Response
 
 # 챌린지별 목표치를 코드로 정의
 CHALLENGE_GOALS = {
@@ -48,3 +49,18 @@ class TeaLogCreateView(APIView):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+class RecentRecommendedTeaView(APIView):
+    def post(self, request):
+        tea_id = request.data.get("tea_id")
+        tea = Tea.objects.get(id=tea_id)
+        RecentRecommendedTea.objects.all().delete()
+        RecentRecommendedTea.objects.create(tea=tea)
+        return Response({"status": "ok"})
+    
+    def get(self, request):
+        try:
+            recent = RecentRecommendedTea.objects.latest('created_at')
+            return Response({"id": recent.tea.id, "name": recent.tea.name})
+        except RecentRecommendedTea.DoesNotExist:
+            return Response({"error": "No recent recommendation"}, status=404)
