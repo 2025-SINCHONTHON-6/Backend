@@ -30,3 +30,7 @@ class TeaLogs(models.Model):
 
     def __str__(self):
         return str(self.tea) + " - " + str(self.created_at)
+
+class RecentRecommendedTea(models.Model):
+    tea = models.ForeignKey('teas.Tea', on_delete=models.CASCADE)
+    created_at = models.DateTimeField(auto_now=True)
