@@ -1,9 +1,7 @@
 # Backend
-2025-SINCHONTHON-6 Backend
-
 차(Tea) 취향 테스트/기록 서비스 TeaBTI의 백엔드입니다. Django Rest Framework 기반으로, 차 추천, 기록, 챌린지 기록 등의 API를 제공합니다.
 
-✨ 서비스 소개
+### ✨ 서비스 소개
 
 추천: 사용자가 선택한 기분(mood)과 맛(taste)에 따라 조건에 맞는 차 목록을 추천하는 API를 제공합니다.
 
@@ -11,23 +9,23 @@
 
 챌린지 기록: 전체 기록을 기반으로 다양한 챌린지(마신 횟수, 종류 등)의 현재 달성도를 계산하여 제공하는 API를 제공합니다.
 
-🧰 기술 스택
+### 🧰 기술 스택
+| 항목         | 내용               |
+|--------------|-------------------|
+| Framework    | DRF               |
+| Database     | SQLite3           |
+| Deploy       | PythonAnywhere    |
 
-Framework: DRF
 
-Database : SQLite3
+### 👥 팀원 소개
+| 이름     | 역할 | 학교 |
+|----------|------|-------|
+|  고선태  | BE   | 연세대학교 |
+|  설영은  | BE   | 이화여자대학교|
+|  황규리  | BE   | 이화여자대학교 |
 
-Deploy : PythonAnywhere
 
-👥 팀원 소개
-```
-이름   역할
-황규리  BE
-설영은  BE
-고선태  BE
-```
-
-🗂 폴더 구조
+### 🗂 폴더 구조
 ```
 Backend/                   # Git Repository Root
 └── Dsichonsix/            # Django Project Root
@@ -67,7 +65,7 @@ Backend/                   # Git Repository Root
     └── requirements.txt
 ```
 
-🚀 실행 방법
+### 🚀 실행 방법
 요구 사항
 
 Python 3.9+
@@ -75,7 +73,7 @@ Python 3.9+
 pip
 
 
-🚀 설치 & 로컬 실행
+### 🚀 설치 & 로컬 실행
 ```
 가상환경 생성 및 활성화
 python -m venv venv
@@ -96,7 +94,7 @@ python manage.py loaddata challenges/data/challenges_challenge.json
 python manage.py runserver
 ```
 
-🔑 API 엔드포인트 개요
+### 🔑 API 엔드포인트 개요
 GET /recommendations/filter/mood?mood={mood}: 기분에 맞는 맛 필터링 데이터 조회
 
 GET /recommendations/filter/taste?taste_id={taste_id}: 맛에 맞는 최종 차 추천 목록 조회
@@ -114,7 +112,7 @@ GET /challenges/logs/dates/: 전체 기록 날짜 조회
 GET /challenges/records/daily?created_at=YYYY-MM-DD: 특정 날짜의 나의 차 기록 조회
 
 
-💾 데이터 모델
+### 💾 데이터 모델
 teas app
 1. TeaCategory
 
