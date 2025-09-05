@@ -6,4 +6,4 @@ class TeaLogs(models.Model):
     date = models.DateField(auto_now_add=True, verbose_name="차 마신 날짜")
 
     def __str__(self):
-        return str(self.tea_id)
+        return str(self.tea_id) + " - " + str(self.date)
