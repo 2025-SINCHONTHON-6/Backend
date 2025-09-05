@@ -44,11 +44,20 @@ class ChallengeStatusView(APIView):
 
 class TeaLogCreateView(APIView):
     def post(self, request, *args, **kwargs):
-        serializer = TeaLogSerializer(data=request.data)
+        try:
+            recent = RecentRecommendedTea.objects.latest('created_at')
+        except RecentRecommendedTea.DoesNotExist:
+            return Response({"error": "최근 추천된 차가 없습니다."}, status=status.HTTP_400_BAD_REQUEST)
+
+        data = request.data.copy()
+        data['tea_id'] = recent.tea.id  # tea_id 강제 세팅
+
+        serializer = TeaLogSerializer(data=data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
     
 class RecentRecommendedTeaView(APIView):
     def post(self, request):
