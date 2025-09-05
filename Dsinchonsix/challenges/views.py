@@ -99,4 +99,11 @@ class MyTeaLogByDateView(APIView):
             return Response({"detail": "해당 날짜 기록 없음"}, status=404)
 
         return Response(TeaLogSerializer(log).data, status=200)
-   
+
+
+class TeaLogDateListView(APIView):
+    def get(self, request):
+        dates = TeaLogs.objects.order_by('-created_at').values_list('created_at', flat=True).distinct()
+        dates = [date.strftime('%Y-%m-%d') for date in dates]
+        return Response(dates)
+
