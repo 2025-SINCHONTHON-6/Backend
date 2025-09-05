@@ -24,7 +24,7 @@ class ChallengeSerializer(serializers.ModelSerializer):
 class TeaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Tea
-        fields = ('id', 'name')
+        fields = ('id', 'name', 'description')
 
 class TeaLogSerializer(serializers.ModelSerializer):
     tea = TeaSerializer(read_only=True)

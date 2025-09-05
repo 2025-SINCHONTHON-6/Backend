@@ -1,10 +1,11 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
+from teas.models import *
 from .serializers import *
-from .models import *
 from rest_framework import status
 from .checkers import CHALLENGE_CHECKERS
 from rest_framework.response import Response
+from datetime import date
 
 # 챌린지별 목표치를 코드로 정의
 CHALLENGE_GOALS = {
@@ -73,3 +74,29 @@ class RecentRecommendedTeaView(APIView):
             return Response({"id": recent.tea.id, "name": recent.tea.name})
         except RecentRecommendedTea.DoesNotExist:
             return Response({"error": "No recent recommendation"}, status=404)
+        
+
+class MyTeaLogByDateView(APIView):
+    """
+    GET /api/my/log?date=2025-09-11
+    응답: TeaLogSerializer 그대로 (tea, feeling, comment, created_at 포함)
+    """
+    def get(self, request):
+        dstr = request.query_params.get("created_at")
+        if not dstr:
+            return Response({"detail": "created_at=YYYY-MM-DD 필요"}, status=400)
+        try:
+            d = date.fromisoformat(dstr)
+        except ValueError:
+            return Response({"detail": "created_at 형식 오류(YYYY-MM-DD)"}, status=400)
+
+        log = (TeaLogs.objects
+               .select_related("tea")          # 리뷰가 OneToOne이면 .select_related("review") 추가
+               .filter(created_at=d)
+               .order_by("-id")
+               .first())
+        if not log:
+            return Response({"detail": "해당 날짜 기록 없음"}, status=404)
+
+        return Response(TeaLogSerializer(log).data, status=200)
+   
