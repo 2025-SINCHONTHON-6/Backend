@@ -22,10 +22,16 @@ class Challenge(models.Model):
         return self.title
 
 class TeaLogs(models.Model):
+    FEELING_CHOICES = [
+        ('좋았어요', '좋았어요'),
+        ('그냥그래요', '그냥그래요'),
+        ('별로에요', '별로에요'),
+    ]
+
     id = models.BigAutoField(primary_key=True)
     tea = models.ForeignKey('teas.Tea', on_delete=models.CASCADE, null=False, verbose_name="차 아이디")  # ← 중요
     created_at = models.DateField(auto_now_add=True, verbose_name="차 마신 날짜")
-    feeling = models.CharField(max_length=30, null=True, blank=True)
+    feeling = models.CharField(max_length=10, choices=FEELING_CHOICES, null=True, blank=True)
     comment = models.TextField(null=True, blank=True)
 
     def __str__(self):
