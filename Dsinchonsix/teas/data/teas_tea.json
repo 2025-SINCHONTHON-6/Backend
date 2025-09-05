@@ -1,0 +1,189 @@
+[
+  {
+    "model": "teas.tea",
+    "pk": 1,
+    "fields": {
+      "name": "용정차",
+      "description": "콩이나 밤을 볶은 듯한 구수한 향과 부드러운 감칠맛이 특징입니다.",
+      "tea_category": 1,
+      "taste": "견과류처럼 고소하고 부드러운 맛",
+      "taste_id": 1
+    }
+  },
+  {
+    "model": "teas.tea",
+    "pk": 2,
+    "fields": {
+      "name": "세작",
+      "description": "갓 베어낸 풀이나 파릇한 채소 같은 신선하고 청량한 향이 특징입니다.",
+      "tea_category": 1,
+      "taste": "신선한 풀잎처럼 풋풋한 맛",
+      "taste_id": 2
+    }
+  },
+  {
+    "model": "teas.tea",
+    "pk": 3,
+    "fields": {
+      "name": "호지차",
+      "description": "찻잎을 강한 불에 볶아 쓴맛은 줄이고, 스모키한 구수함을 극대화했습니다.",
+      "tea_category": 1,
+      "taste": "구수한 불 맛과 깔끔한 맛",
+      "taste_id": 3
+    }
+  },
+  {
+    "model": "teas.tea",
+    "pk": 4,
+    "fields": {
+      "name": "말차",
+      "description": "그늘에서 재배하여 감칠맛(우마미)이 매우 풍부하고, 쌉쌀한 맛이 특징입니다.",
+      "tea_category": 1,
+      "taste": "바다 내음과 진한 감칠맛",
+      "taste_id": 4
+    }
+  },
+  {
+    "model": "teas.tea",
+    "pk": 5,
+    "fields": {
+      "name": "백호은침",
+      "description": "아카시아 꿀이나 흰 꽃처럼 맑고 달콤한 향이 나며, 맛이 매우 부드럽습니다.",
+      "tea_category": 2,
+      "taste": "은은한 꿀과 꽃 향기",
+      "taste_id": 5
+    }
+  },
+  {
+    "model": "teas.tea",
+    "pk": 6,
+    "fields": {
+      "name": "수미",
+      "description": "시간이 지나면서 살구 같은 과일 향과 함께 편안한 볏짚 향이 올라옵니다.",
+      "tea_category": 2,
+      "taste": "잘 익은 과일과 볏짚 향",
+      "taste_id": 6
+    }
+  },
+  {
+    "model": "teas.tea",
+    "pk": 7,
+    "fields": {
+      "name": "군산은침",
+      "description": "갓 쪄낸 옥수수나 군밤처럼 구수하면서도 부드러운 단맛이 특징입니다.",
+      "tea_category": 3,
+      "taste": "찐 옥수수처럼 구수하고 달콤한 맛",
+      "taste_id": 7
+    }
+  },
+  {
+    "model": "teas.tea",
+    "pk": 8,
+    "fields": {
+      "name": "몽정황아",
+      "description": "녹차와 비슷하지만 풋풋함 대신 구수함과 부드러움이 강조된 맛입니다.",
+      "tea_category": 3,
+      "taste": "부드럽고 깔끔한 맛",
+      "taste_id": 8
+    }
+  },
+  {
+    "model": "teas.tea",
+    "pk": 9,
+    "fields": {
+      "name": "철관음",
+      "description": "난초나 치자꽃처럼 깨끗하고 향기로운 꽃 향과 함께 산뜻한 맛이 특징입니다.",
+      "tea_category": 4,
+      "taste": "난초처럼 맑고 향긋한 꽃 향",
+      "taste_id": 9
+    }
+  },
+  {
+    "model": "teas.tea",
+    "pk": 10,
+    "fields": {
+      "name": "동방미인",
+      "description": "잘 익은 백도나 리치, 꿀처럼 달콤하고 매혹적인 과일 향이 특징입니다.",
+      "tea_category": 4,
+      "taste": "복숭아, 꿀처럼 달콤하고 화려한 향",
+      "taste_id": 10
+    }
+  },
+  {
+    "model": "teas.tea",
+    "pk": 11,
+    "fields": {
+      "name": "무이암차",
+      "description": "바위에서 자란 차나무의 미네랄 풍미와 묵직한 바디감이 특징입니다.",
+      "tea_category": 4,
+      "taste": "암석의 기운과 묵직한 스모키한 향",
+      "taste_id": 11
+    }
+  },
+  {
+    "model": "teas.tea",
+    "pk": 12,
+    "fields": {
+      "name": "아삼",
+      "description": "맥아나 갓 구운 빵처럼 진하고 구수하며, 우유와 잘 어울리는 묵직한 맛입니다.",
+      "tea_category": 5,
+      "taste": "엿기름처럼 진하고 구수한 몰트 향",
+      "taste_id": 12
+    }
+  },
+  {
+    "model": "teas.tea",
+    "pk": 13,
+    "fields": {
+      "name": "다즐링",
+      "description": "\"홍차의 샴페인\"이라 불리며, 청포도 같은 상큼하고 섬세한 향이 특징입니다.",
+      "tea_category": 5,
+      "taste": "청포도처럼 향긋하고 섬세한 맛",
+      "taste_id": 13
+    }
+  },
+  {
+    "model": "teas.tea",
+    "pk": 14,
+    "fields": {
+      "name": "얼그레이",
+      "description": "홍차에 베르가못 오렌지 향을 입혀 상큼하고 화사한 향이 매력적입니다.",
+      "tea_category": 5,
+      "taste": "베르가못의 상큼함과 시트러스 향",
+      "taste_id": 14
+    }
+  },
+  {
+    "model": "teas.tea",
+    "pk": 15,
+    "fields": {
+      "name": "정산소종",
+      "description": "소나무를 태운 연기로 찻잎을 말려 독특하고 강렬한 스모키 향이 특징입니다.",
+      "tea_category": 5,
+      "taste": "훈연 향과 깊은 나무 향",
+      "taste_id": 15
+    }
+  },
+  {
+    "model": "teas.tea",
+    "pk": 16,
+    "fields": {
+      "name": "보이차(숙차)",
+      "description": "갓 비 온 뒤의 숲속 흙이나 오래된 고가구 같은 편안하고 깊은 향이 특징입니다.",
+      "tea_category": 6,
+      "taste": "오래된 나무와 흙 내음",
+      "taste_id": 16
+    }
+  },
+  {
+    "model": "teas.tea",
+    "pk": 17,
+    "fields": {
+      "name": "보이차(생차)",
+      "description": "잘 익은 생차는 떫은맛이 사라지고 대추나 약재 같은 기분 좋은 단맛이 납니다.",
+      "tea_category": 6,
+      "taste": "대추처럼 달고 부드러운 맛",
+      "taste_id": 17
+    }
+  }
+]
